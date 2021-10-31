@@ -34,15 +34,18 @@ const databaseConfig: DatabaseConfig = {
     | npm i sqlite3
     |
     */
-    sqlite: {
-      client: 'sqlite',
+    pg: {
+      client: 'pg',
       connection: {
-        filename: Application.tmpPath('db.sqlite3'),
+        host: Env.get('PG_HOST'),
+        port: Env.get('PG_PORT'),
+        user: Env.get('PG_USER'),
+        password: Env.get('PG_PASSWORD', ''),
+        database: Env.get('PG_DB_NAME'),
       },
       migrations: {
         naturalSort: true,
       },
-      useNullAsDefault: true,
       healthCheck: false,
       debug: false,
     },

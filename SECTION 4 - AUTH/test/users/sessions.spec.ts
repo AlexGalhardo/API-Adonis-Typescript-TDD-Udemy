@@ -6,17 +6,22 @@ import supertest from 'supertest'
 const BASE_URL = `http://${process.env.HOST}:${process.env.PORT}`
 
 test.group('Session', (group) => {
-  test('it should authenticate an user', async (assert) => {
+
+  test.only('it should authenticate an user', async (assert) => {
     const plainPassword = 'test'
     const { id, email } = await UserFactory.merge({ password: plainPassword }).create()
+
     const { body } = await supertest(BASE_URL)
       .post('/sessions')
       .send({ email, password: plainPassword })
       .expect(201)
 
+    // console.log({user: body.user})
+
     assert.isDefined(body.user, 'User undefined')
     assert.equal(body.user.id, id)
   })
+
 
   test('it should return an api token when session is created', async (assert) => {
     const plainPassword = 'test'
@@ -29,6 +34,7 @@ test.group('Session', (group) => {
     assert.isDefined(body.token, 'Token undefined')
     assert.equal(body.user.id, id)
   })
+
 
   test('it should return 400 when credentials are not provided', async (assert) => {
     const { body } = await supertest(BASE_URL).post('/sessions').send({}).expect(400)

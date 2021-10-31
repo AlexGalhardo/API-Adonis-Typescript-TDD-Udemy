@@ -1,3 +1,10 @@
+- https://www.udemy.com/course/api-completa-com-adonisjs-5-typescript-e-tdd/
+- https://docs.adonisjs.com/cookbooks/testing-adonisjs-apps
+
+- https://medium.com/@piyumimdasanayaka/json-web-token-jwt-vs-opaque-token-984791a3e715
+- https://github.com/adonisjs/core/discussions/1365
+- https://docs.adonisjs.com/guides/auth/social
+
 - $ node ace --help
 - $ node ace make:controller --help
 - $ node ace make:controller User
@@ -11,6 +18,8 @@
 - $ node ace make:validator ForgotPassword
 - $ node ace make:validator ResetPassword
 - $ node ace make:exception TokenExpired
+- $ node ace make:controller Session
+- $ node ace configure @adonisjs/auth
 
 The package has been configured successfully. The database configuration stored inside config/database.ts file relies on the following environment variables and hence we recommend validating them.
 
