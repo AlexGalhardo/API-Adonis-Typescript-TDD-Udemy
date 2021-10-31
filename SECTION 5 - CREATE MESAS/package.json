@@ -1,5 +1,5 @@
 {
-  "name": "roleplay_section4",
+  "name": "roleplay_section5",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -37,7 +37,7 @@
     "@adonisjs/view": "^6.0.4",
     "luxon": "^1.27.0",
     "pg": "^8.7.1",
-    "phc-argon2": "^1.1.1",
+    "phc-argon2": "^1.1.2",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.19"
