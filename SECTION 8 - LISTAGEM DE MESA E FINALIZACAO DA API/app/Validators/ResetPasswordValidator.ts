@@ -1,7 +1,7 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema } from '@ioc:Adonis/Core/Validator'
 
-export default class CreateGroupValidator {
+export default class ResetPasswordValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   /*
@@ -13,7 +13,7 @@ export default class CreateGroupValidator {
    *    ```
    *     schema.string({}, [ rules.alpha() ])
    *    ```
-   *dddddddd
+   *
    * 2. The email must be of data type string, formatted as a valid
    *    email. But also, not used by any other user.
    *    ```
@@ -24,12 +24,8 @@ export default class CreateGroupValidator {
    *    ```
    */
   public schema = schema.create({
-    name: schema.string({}),
-    description: schema.string({}),
-    schedule: schema.string({}),
-    location: schema.string({}),
-    chronic: schema.string({}),
-    master: schema.number(),
+    token: schema.string(),
+    password: schema.string(),
   })
 
   /**
