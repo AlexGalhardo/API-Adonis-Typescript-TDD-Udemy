@@ -28,6 +28,8 @@
 - $ node ace make:validator CreateGroup
 - $ node ace make:migration group_users
 
+- $ node ace migration:run
+
 # DataBase 
 - The package has been configured successfully. The database configuration stored inside config/database.ts file relies on the following environment variables and hence we recommend validating them.
 
